@@ -1,0 +1,72 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "public/",
+    "commitlint.config.js",
+    "*.d.ts"
+  ],
+  "globals": {
+    "THING": "readonly",
+    "CMAP": "readonly",
+    "defineProps": "readonly",
+    "defineExpose": "readonly",
+    "withDefaults": "readonly",
+    "echarts": "readonly",
+    "spray": "readonly",
+    "jest": "readonly",
+    "expect": "readonly",
+    "test": "readonly"
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    // js，ts
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-console": "warn",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreMemberSort": true
+      }
+    ],
+    // vue
+    "vue/max-attributes-per-line": "off",
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/html-self-closing": [
+      "warn",
+      {
+        "html": {
+          "normal": "never",
+          "void": "always"
+        }
+      }
+    ],
+    // 组件使用时的命名方式为 kebab-case
+    "vue/component-name-in-template-casing": [
+      "warn",
+      "kebab-case",
+      {
+        "registeredComponentsOnly": false
+      }
+    ]
+  }
+}

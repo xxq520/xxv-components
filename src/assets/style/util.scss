@@ -1,0 +1,96 @@
+// 常用的效果样式
+
+// flex布局设置 @include flex(space-around, center, row);
+@mixin flex($j: center, $a: center, $d: row) {
+  display: flex;
+  flex-direction: $d;
+  align-items: $a;
+  justify-content: $j;
+}
+
+// 文本单行溢出显示省略号 @include text-overflow;
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 清除浮动 @include clearfix;
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 滚动条样式 示例: @include scrollBar;
+// ul {
+//   @include scrollBar;
+// }
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+// 制作三角形 示例：
+// span {
+//   display: inline-block;
+//   width: 5px;
+//   height: 5px;
+//   @include triangle(18px, 16px, red, right) right代表三角形尖的那一端朝向右
+// }
+@mixin triangle($width, $height, $color, $direction) {
+  $width: calc($width / 2);
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  } @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+
+// 制作圆 @include circle(50px, red);
+@mixin circle($radius, $bg) {
+  display: inline-block;
+  width: $radius;
+  height: $radius;
+  border-radius: 50%;
+  background-color: $bg;
+}
+
+// 图片填充背景容器 @include circle(100%, 100%, url('./img.png'));
+@mixin img-box($width, $height, $bg) {
+  width: $width;
+  height: $height;
+  background-image: $bg;
+  background-position: center;
+  background-size: $width $height;
+  background-repeat: no-repeat;
+}
