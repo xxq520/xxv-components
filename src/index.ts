@@ -11,6 +11,7 @@ const install = (app: App) => {
   });
 };
 
+
 /** 局部注册(按需引入) */
 export { XxvIconList, XxvScrollTable, install };
 
