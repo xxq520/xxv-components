@@ -65,7 +65,7 @@ test('SFC: test Request.vue', async () => {
     ],
   };
   /** 渲染挂载组件 */
-  const wrapper = mount(Test, { props });
+  mount(Test, { props });
   /** 判断渲染的数量是传输进去的7个数据 */
   // expect(wrapper.findAll(".item-box").length).toBe(4);
 });

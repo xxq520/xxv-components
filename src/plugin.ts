@@ -1,4 +1,4 @@
-import { App } from "vue";
+import { App } from 'vue';
 export declare interface xxv {
   install: (app: App) => void;
 }

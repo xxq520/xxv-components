@@ -1,6 +1,6 @@
-import { App } from "vue";
-import { XxvIconList } from "./component/icon-list/icon-list";
-import { XxvScrollTable } from "./component/table/scroll-table";
+import { App } from 'vue';
+import { XxvIconList } from './component/icon-list/icon-list';
+import { XxvScrollTable } from './component/table/scroll-table';
 
 const components = [XxvIconList, XxvScrollTable];
 

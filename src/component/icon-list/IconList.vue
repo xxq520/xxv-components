@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed } from 'vue';
 interface IrenderData {
   renderData: {
     name: string;
@@ -30,7 +30,7 @@ interface IrenderData {
   }[];
 }
 export default defineComponent({
-  name: "XxvIconList",
+  name: 'XxvIconList',
   props: {
     renderData: {
       type: Array,
@@ -42,42 +42,42 @@ export default defineComponent({
     let { renderData } = <IrenderData>props;
     /** 处理数据 */
     const getData = computed(() => {
-      return (
-        renderData.length ? renderData : [
-          {
-            name: '计算设备',
-            value: 0,
-          },
-          {
-            name: '网络设备',
-            value: 0,
-          },
-          {
-            name: '安全设备',
-            value: 0,
-          },
-          {
-            name: '存储设备',
-            value: 0,
-          },
-          {
-            name: '视频会议',
-            value: 0,
-          },
-          {
-            name: '动环设备',
-            value: 0,
-          },
-          {
-            name: '多媒体设备',
-            value: 0,
-          },
-          {
-            name: '物联设备',
-            value: 0,
-          },
-        ]
-      );
+      return renderData.length
+        ? renderData
+        : [
+            {
+              name: '计算设备',
+              value: 0,
+            },
+            {
+              name: '网络设备',
+              value: 0,
+            },
+            {
+              name: '安全设备',
+              value: 0,
+            },
+            {
+              name: '存储设备',
+              value: 0,
+            },
+            {
+              name: '视频会议',
+              value: 0,
+            },
+            {
+              name: '动环设备',
+              value: 0,
+            },
+            {
+              name: '多媒体设备',
+              value: 0,
+            },
+            {
+              name: '物联设备',
+              value: 0,
+            },
+          ];
     });
     return {
       getData,
